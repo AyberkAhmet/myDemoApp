@@ -1,0 +1,1 @@
+Bu uygulama bir arraylistin için de verilen sayıyı arar.
