@@ -33,23 +33,35 @@ public class AppTest extends TestCase {
         assertTrue(true);
     }
 
-    public void testFound() {
+    public void testBugTeam2Won() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertTrue(new App().search(array, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 3, 2, 1));
+        assertEquals("Bug Team 2 Won geçti", "Bug Team 2 Kazandı!!!", App.BugFight(array, array2, 1, 3));
     }
 
-    public void testNotFound() {
+    public void testBugTeam1Won() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertFalse(new App().search(array, 5));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 3, 2, 1));
+        assertEquals("Bug Team 1 Won geçti", "Bug Team 1 Kazandı!!!" , App.BugFight(array, array2, 2 , 1));
     }
 
-    public void testEmptyArray() {
-        ArrayList<Integer> array = new ArrayList<>();
-        assertFalse(new App().search(array, 1));
+    public void testBerabere() {
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 3, 2, 1));
+        assertEquals("Berabere geçti", "Berabere", App.BugFight(array, array2, 4, 1));
     }
 
     public void testNull() {
-        assertFalse(new App().search(null, 1));
+        ArrayList<Integer> array = null;
+        ArrayList<Integer> array2 = null;
+        assertEquals("Null geçti", "Bug Team 1 formu ya da Bug Team 2 formu null", App.BugFight(array, array2, 4, 1));
+    }
+
+    public void testIsEmpty() {
+        ArrayList<Integer> array = new ArrayList<>();
+        ArrayList<Integer> array2 = new ArrayList<>();
+        assertEquals("IsEmpty geçti", "Bug Team 1 formu ya da Bug Team 2 formu bos", 
+                App.BugFight(array, array2, 4, 1));
     }
 
 }
