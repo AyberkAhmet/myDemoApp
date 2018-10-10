@@ -2,5 +2,6 @@
 .classpath
 .project
 .factorypath
+sh.exe.stackdump
 .vscode/
 target/
